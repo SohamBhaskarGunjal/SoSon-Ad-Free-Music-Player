@@ -209,22 +209,20 @@ export default function MusicPlayer({
   const getCoverImage = (track?: Track) => {
     if (!track) return "/bg/scene-wide.png";
 
-    // Strictly restrict artist photo usage to when an Artist is selected in the Artist section
-    if (selectedArtist && selectedArtist !== "All") {
-      const artistLower = track.artist.toLowerCase();
-      if (artistLower.includes("honey")) return "/artists/Honey Singh.png";
-      if (artistLower.includes("cheema")) return "/artists/cheema.png";
-      if (artistLower.includes("diljit")) return "/artists/diljit.png";
-      if (artistLower.includes("guru") || artistLower.includes("randhawa")) return "/artists/guru.png";
-      if (artistLower.includes("karan") || artistLower.includes("aujla")) return "/artists/karan.png";
-      if (artistLower.includes("shubh")) return "/artists/shubh.png";
-      if (artistLower.includes("sidhu") || artistLower.includes("moose")) return "/artists/sidhu.png";
-    }
-
-    // For Style section or general listening, use non-artist coverUrl or neutral theme banner
-    if (track.coverUrl && !track.coverUrl.startsWith("/artists/")) {
+    if (track.coverUrl) {
       return track.coverUrl;
     }
+
+    const artistLower = track.artist.toLowerCase();
+    if (artistLower.includes("sumit") || artistLower.includes("goswami")) return "/artists/sumit.png";
+    if (artistLower.includes("honey")) return "/artists/Honey Singh.png";
+    if (artistLower.includes("cheema")) return "/artists/cheema.png";
+    if (artistLower.includes("diljit")) return "/artists/diljit.png";
+    if (artistLower.includes("guru") || artistLower.includes("randhawa")) return "/artists/guru.png";
+    if (artistLower.includes("karan") || artistLower.includes("aujla")) return "/artists/karan.png";
+    if (artistLower.includes("shubh")) return "/artists/shubh.png";
+    if (artistLower.includes("sidhu") || artistLower.includes("moose")) return "/artists/sidhu.png";
+
     return "/bg/scene-wide.png";
   };
 
