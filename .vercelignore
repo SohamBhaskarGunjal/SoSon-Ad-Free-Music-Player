@@ -1,0 +1,2 @@
+# Ignore local audio files in Vercel to keep build sizes under 324MB limit
+public/audio/

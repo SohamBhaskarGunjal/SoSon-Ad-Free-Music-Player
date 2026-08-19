@@ -1,0 +1,2 @@
+# Place offline MP3, WAV, or AAC audio files in this directory
+# Example: public/audio/song1.mp3 -> accessed via "/audio/song1.mp3" in Track data
